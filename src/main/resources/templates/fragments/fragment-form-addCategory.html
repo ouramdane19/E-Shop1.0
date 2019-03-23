@@ -1,0 +1,64 @@
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"></meta>
+<div data-th-fragment="addCategoryForm"
+	xmlns:th="http://www.thymeleaf.org">
+	<!-- page content -->
+
+	<div class="row">
+		<div class="col-md-6 col-xs-12">
+			<div class="x_panel">
+				<div class="x_title">
+					<h2>
+						Add Categories <small>Add Category to data base</small>
+					</h2>
+					<ul class="nav navbar-right panel_toolbox">
+						<li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+						</li>
+						<li class="dropdown"><a href="#" class="dropdown-toggle"
+							data-toggle="dropdown" role="button" aria-expanded="false"><i
+								class="fa fa-wrench"></i></a>
+					</ul>
+					<div class="clearfix"></div>
+				</div>
+				<div class="x_content">
+					<br />
+
+					<form method="post" th:action="@{/admin/saveCat}"
+						class="form-horizontal form-label-left input_mask">
+
+						<div class="col-md-12 col-sm-12 col-xs-12 form-group has-feedback">
+							<input type="text" class="form-control has-feedback-left"
+								id="inputSuccess3" placeholder="Désignation" name=nomCategorie />
+								
+						</div>
+						<div class="col-md-12 col-sm-12 col-xs-12 form-group has-feedback">
+							<input type="text" class="form-control has-feedback-left"
+								id="inputSuccess3" placeholder="Description" name=description />
+						</div>
+						<div class="col-md-12 col-sm-12 col-xs-12 form-group has-feedback">
+							<input type="text" class="form-control has-feedback-left"
+								id="inputSuccess3" placeholder="Nom de la photo" name=nomPhoto />
+						</div>
+						<div class="ln_solid"></div>
+						<input type="file" id="inputSuccess4" name=photo></span>
+
+						<div class="ln_solid"></div>
+						<div class="form-group">
+							<div class="col-md-9 col-sm-12 col-xs-12 col-md-offset-3">
+								<a type="button" class=" btn btn-dark collapse-link">Cancel</a>
+								<button class="btn btn-danger" type="reset">Reset</button>
+								<button type="submit" class="btn btn-success"><i
+								class="fa fa-floppy-o"></i> Ajouter</button>
+							</div>
+						</div>
+
+
+					</form>
+
+				</div>
+			</div>
+
+		</div>
+	</div>
+</div>
+<!-- /page content -->

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en" data-layout-decorate="~{layoutBoutique}">
+
+<head>
+<meta charset="utf-8"></meta>
+<title>Eshop -[[${produit.designation}]]</title>
+
+</head>
+
+<body>
+
+
+
+	<!-- Page Content -->
+	<div class="container" data-layout-fragment="content">
+
+		<div class="row">
+
+			<div class="col-lg-3">
+				<h1 class="my-4">Eshop</h1>
+				<div class="list-group" th:each="c:${listeCat}">
+					<a href="#" class="list-group-item " th:text="${c.nomCategorie}"></a>
+
+				</div>
+			</div>
+			<!-- /.col-lg-3 -->
+
+			<div class="col-lg-9">
+
+				<div class="card mt-4">
+					<img class="card-img-top img-fluid"
+						src="http://placehold.it/900x400" alt="">
+					<div class="card-body">
+						<h3 class="card-title" th:text="${produit.designation}"></h3>
+						<h4 th:text="${produit.prix}"></h4>
+						<p class="card-text">Description du produit qu'il faut ajouter à l'entité produit</p>
+						<form th:action="@{/addItem}"   method="post">
+							<div class="form-group">
+						<label for="quantite"> Quantité </label>
+							<input type="number" name=quantite id="quantite" class="form-control" > 
+							<button 
+								class="btn btn-success " style="margin-top: 15px; margin-left: 20px" type="submit" > Ajouter au panier
+							</button>
+						</div>
+						</form>
+						<!-- <a th:href="@{/addItem}" class="btn btn-success">Ajouter
+							au panier</a> -->
+						
+
+					</div>
+				</div>
+				<!-- /.card -->
+
+
+				<!-- /.card -->
+
+			</div>
+			<!-- /.col-lg-9 -->
+
+		</div>
+
+	</div>
+	<!-- /.container -->
+
+
+</body>
+
+</html>

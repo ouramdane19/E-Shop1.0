@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" data-layout-decorate="~{fragments/layout}">
+
+<head>
+<meta charset="UTF-8" /></meta>
+<title>Confirmation</title>
+
+</head>
+
+<body>
+
+	<div class="right_col" role="main" data-layout-fragment="content">
+
+		<div class="col-md-12">
+			<div class="col-middle">
+				<div class="text-center text-center">
+					<h1 class="ok">Modification réussie</h1>
+					<div class="container">
+						<h3>Confirmation d'envoi</h3>
+						<ul class="list-group">
+							<li class="list-group-item">ID :[[${categorie.idCategorie}]]</li>
+							<li class="list-group-item">Désignation:[[${categorie.nomCategorie}]]</li>
+							<li class="list-group-item">Description:[[${categorie.description}]]</li>
+							<li class="list-group-item">Nom de la photo : [[${categorie.nomPhoto}]]</li>
+							 <li class="list-group-item">Photo  
+								:[[${categorie.photo}]]</li> 
+								<li class ="list-group-item"><img th:src = "@{categorie.photo}"/></li>
+						</ul>
+					
+					</div>
+					<a type="button" class="btn btn-success" th:href="@{/admin/categories}"> <i class="fa fa-floppy-o"></i> Valider</a>
+						
+					<a type="button"
+						class=" btn btn-warning"
+						th:href="@{/admin/editCat(id=${categorie.idCategorie})}"><i
+						class="fa fa-pencil"></i> Modifier</a>
+					
+				</div>
+			</div>
+		</div>
+	</div>
+
+</body>
+
+</html>

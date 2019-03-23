@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" 
+xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+ layout:decorator="layout" >
+<head>
+	<meta charset="UTF-8" />
+	<link rel="stylesheet" type="text/css" 
+	 href="../static/css/bootstrap.min.css" th:href ="@{/css/bootstrap.min.css}"/>
+	 <link rel="stylesheet" type="text/css" href="../static/css/style.css" th:href ="@{/css/style.css}"/>
+	 
+	<title>Editer client</title>
+</head>
+<body >
+	 <header class="navbar navbar-expand navbar-dark bg-dark flex-column flex-md-row bd-navbar">
+		  <div class="navbar-nav-scroll">
+			    <ul class="navbar-nav bd-navbar-nav flex-row">
+							<li  class="nav-item"><a class="nav-link"  th:href="@{/user/pageProduit}">Acceuil</a></li>
+			 		<li  class="nav-item"><a class="nav-link"  th:href="@{/user/pageProduit}">Produits</a></li>
+			 		<li  class="nav-item"><a class="nav-link" th:href="@{/admin/categories}">Categories</a></li>
+					<li  class="nav-item exit"><a class="nav-link" th:href="@{/login?logout}">[[${#httpServletRequest.remoteUser}]] exit</a></li>
+			    </ul>
+		  </div>
+	</header>
+
+	<div class="col-md-6 offset-md-3 spacer" layout:fragment="content">
+		<div class="card">
+			<div class ="card-heading login"><h3 >edit Client </h3> </div>
+			<div class=" card card-body">
+				<form th:action="@{/user/saveClient}"method="post">
+					<div class="form-group"  >
+						<label class="control-label">ID</label>
+						<input class ="form-control" type="text" name=idClient 
+						th:value="${client.idClient}"  hidden="" /> 
+						<span class="red" th:errors="${client.idClient}" ></span>
+					</div> 
+					<div class="form-group"  >
+						<label class="control-label">Nom</label>
+						<input class ="form-control" type="text" name=nomClient 
+						th:value="${client.nomClient}" /> 
+						<span class="red" th:errors="${client.nomClient}" ></span>
+					</div>
+					<div class="form-group"  >
+						<label class="control-label">Adresse</label>
+						
+						<!-- <input class ="form-control" type="text" name=description 
+						th:value="${produit.description}" />  -->
+						
+					<textarea class ="form-control" th:value="${client.adresse}" name=adresse rows="3" cols="33" maxlength="200" wrap="hard">
+					</textarea>
+						<span class="red" th:errors="${client.adresse}" ></span>
+					</div>
+					
+					<div class= "form-group">
+						<label class ="control-label" >Email</label>
+						<input class="form-control"  type="text" name=email th:value="${client.email}"/> 
+						<span class="red" th:errors="${client.email}" ></span>
+					</div>
+					<div class= "form-group">
+						<label class ="control-label" >Téléphone</label>
+						<input class="form-control"  type="text" name=tel th:value="${client.tel}"/> 
+						<span class="red" th:errors="${client.tel}" ></span>
+					</div>
+						<div>								
+							<button class="btn btn-outline-success my-2 my-sm-0" type="submit" >Save</button>
+					</div>
+				</form>
+			</div>		   
+		</div>
+	</div>
+	
+</body>
+</html>

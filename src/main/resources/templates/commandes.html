@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en" data-layout-decorate="~{fragments/layout}">
+
+<head>
+<title>produits</title>
+<meta charset="UTF-8" /></meta>
+</head>
+
+<body>
+	<div class="right_col" role="main" data-layout-fragment="content">
+		<div class="">
+			<div class="page-title">
+
+				<div class="title_left">
+					<h3>
+						Table des Commandes <small>dans la DB</small>
+					</h3>
+				</div>
+
+				<div class="title_right">
+					<div
+						class="col-md-5 col-sm-5 col-xs-12 form-group pull-right top_search">
+
+						<form class="input-group"  >
+							<input type="text" class="form-control" name= motCle
+								placeholder="Search for..." th:value="${motCle}"> <span
+								class="input-group-btn">
+								<button class="btn btn-default" type="submit">Go!</button>
+							</span>
+						</form>
+
+					</div>
+				</div>
+
+				<div class="x_content">
+
+					<!-- Formulaire d'ajout de produits -->
+					<!-- <div
+						data-th-replace="fragments/fragment-form-addProduct :: addProductForm"></div> -->
+					<!-- /Formulaire d'ajout de produits -->
+
+					<div class="clearfix"></div>
+					<div class="table-responsive ">
+						<table class="table table-striped jambo_table bulk_action">
+
+							<thead>
+								<tr class="headings">
+									<th><input type="checkbox" id="check-all" class="flat">
+									<th class="column-title">ID Commande </th>
+									<th class="column-title">Date de la commande </th>
+									<th class="column-title">ID Client</th>
+							
+								</tr>
+							</thead>
+							<tbody>
+								<tr class="even pointer" th:each="cmd:${mesCommandes}">
+									<td class="a-center "><input type="checkbox" class="flat"
+										name="table_records"></td>
+
+							 		 <td class=" " th:text="${cmd.idCommande}"></td> 
+									 <td class=" " th:text="${cmd.dateCommande }"></td> 
+									
+					
+								</tr>
+
+							</tbody>
+						</table>
+
+						<!-- pagination  -->
+
+						<nav aria-label="Page navigation example">
+							<ul class="pagination justify-content-center">
+								<li class=" page-item" th:each="pa,status:${pages}"><a
+									class="page-link "
+									th:class="${pageCourante}==${status.index}?'page-link active':'page-link disabled'"
+									th:href="@{/admin/commandeManager(page=${status.index},size=${size}, motCle=${motCle})}"
+									th:text="${status.index}"></a></li>
+
+							</ul>
+						</nav>
+
+						<!-- /pagination  -->
+
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</div>
+</body>
+</html>

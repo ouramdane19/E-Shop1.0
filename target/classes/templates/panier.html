@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en" data-layout-decorate="~{layoutBoutique}">
+
+<head>
+<title>Eshop Home</title>
+</head>
+
+<body>
+	<!-- Page Content -->
+
+	<div class="container" data-layout-fragment="content">
+      
+	 <div class="container "
+		style="width: 1145px; margin-top: 20px; margin-bottom: 180px;">
+		<div ng-app="myapp" ng-controller="myController"
+			style="margin-bottom: 30px">
+			<div >
+				<h2> Liste de produits dans le panier</h2>
+				
+				<div class="container" style =" margin-bottom: 15px">
+				<a  href="/home" class="btn btn-default pull-left"
+						style="margin-top: 15px; margin-left: 20px"> <span
+						class="glyphicon glyphicon-shipping-cart"> </span>Home
+					</a>
+				
+					<a href="/home" class="btn btn-success pull-left"
+						style="margin-top: 15px; margin-left: 20px"> <span
+						class="glyphicon glyphicon-shipping-cart"> </span>Continuer shopping
+					</a>
+
+					<a th:href="@{/deleteAll}" class="btn btn-danger pull-left" style="margin-top: 15px; margin-left: 20px" 
+					onclick="return confirm('Voulez vous vider le panier !')" >Vider le panier</a>
+				</div>
+			
+				<table class="table table-hover" id="productList">
+					<thead>
+						<tr>
+							<th>Product Name</th>
+							<th>Quantity</th>
+							<th>Price</th>
+							<th>Total Price</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr th:each="l:${listeCommandes}"  >
+							<td th:text ="${l.produit.designation}" ></td>
+							<td th:text ="${l.quantite}"></td>
+							<td th:text ="${l.produit.prix}"></td>
+							<td  th:text ="${l.prix}"></td>
+							<td><a onclick="return confirm('Êtes vous sûr de vouloir le supprimer!')" th:href="@{/deleteLC(id=${l.idLigneCommande})}"  class="btn btn-danger">remove</a></td>
+					</tbody>
+				</table>
+				<p > Le total est de : [[${total}]]<p>
+				<a href="/commande" class="btn btn-dark pull-left"
+						style="margin-top: 15px; margin-left: 20px"> <span
+						class="glyphicon glyphicon-shipping-cart"> </span>Commander
+					</a>
+			</div>
+			
+		
+		</div>
+	</div> -->
+		
+
+	</div>
+
+</body>
+
+</html>

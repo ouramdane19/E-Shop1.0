@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en" data-layout-decorate="~{layoutBoutique}">
+
+<head>
+<title>Eshop Home</title>
+</head>
+
+<body>
+	<!-- Page Content -->
+
+	<div class="container" data-layout-fragment="content">
+      
+	 <div class="container"
+		style="width: 1145px; margin-top: 20px; margin-bottom: 180px;">
+		<div ng-app="myapp" ng-controller="myController"
+			style="margin-bottom: 30px">
+			<div >
+				<h3 th:text ="${lc.produit.designation}"> </h3> 
+			
+				<table class="table table-hover" id="productList">
+					<thead>
+						<tr>
+							<th>Product Name</th>
+							<th>Quantity</th>
+							<th>Price</th>
+							<th>Total Price</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td  th:text ="${lc.produit.designation}"></td>
+							<td th:text ="${ligneCommande.quantite}"></td>
+						
+							<td th:text ="${lc.produit.prix}"></td>
+							<td  th:text ="${lc.prix}"></td>
+							<td><a onclick="return confirm('Êtes vous sûr de vouloir le supprimer!')" 
+							th:href="@{/deleteLC(id=${lc.idLigneCommande})}"  class="btn btn-danger">remove</a></td>
+					</tbody>
+				</table>
+			</div>
+					<a href="/home" class="btn btn-default pull-left"
+						style="margin-top: 15px; margin-left: 20px"> <span
+						class="glyphicon glyphicon-shipping-cart"> </span>Home
+					</a>
+					<a href="/panier" class="btn btn-default pull-left"
+						style="margin-top: 15px; margin-left: 20px"> <span
+						class="glyphicon glyphicon-shipping-cart"> </span>Mon Panier
+					</a>
+					<a href="/home" class="btn btn-success pull-left"
+						style="margin-top: 15px; margin-left: 20px"> <span
+						class="glyphicon glyphicon-shipping-cart"> </span>Continuer shopping
+					</a>
+		
+		</div>
+	</div> -->
+		
+
+	</div>
+
+</body>
+
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" data-layout-decorate="~{fragments/layout}">
+
+<head>
+<meta charset="UTF-8" /></meta>
+<title>Confirmation</title>
+
+</head>
+
+<body>
+
+	<div class="right_col" role="main" data-layout-fragment="content">
+
+		<div class="col-md-12">
+			<div class="col-middle">
+				<div class="text-center text-center">
+					<h1 class="ok">Modification réussie</h1>
+					<div class="container">
+						<h3>Confirmation d'envoi</h3>
+						<ul class="list-group">
+						
+							<li class="list-group-item">ID :[[${client.idClient}]]</li>
+							<li class="list-group-item">Nom du client:[[${client.nomClient}]]</li>
+							<li class="list-group-item">Adresse:[[${client.adresse}]]</li>
+							<li class="list-group-item">Adresse mail : [[${client.email}]]</li>
+							 <li class="list-group-item">Numéro de téléphone  :[[${client.tel}]]</li> 
+								
+						</ul>
+					
+					</div>
+					<a type="button" class="btn btn-success" th:href="@{/admin/clientManager}"> <i class="fa fa-floppy-o"></i> Valider</a>
+						
+					<a type="button"
+						class=" btn btn-warning"
+						th:href="@{/admin/editClient(id=${cle.idClient})}"><i
+						class="fa fa-pencil"></i> Modifier</a>
+					
+				</div>
+			</div>
+		</div>
+	</div>
+
+</body>
+
+</html>

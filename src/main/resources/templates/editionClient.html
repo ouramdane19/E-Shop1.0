@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en" data-layout-decorate="~{fragments/layout}">
+
+<head>
+<title>Edition catégorie</title>
+<meta charset="UTF-8" /></meta>
+</head>
+
+<body>
+
+	<div layout:fragment="nav"></div>
+
+	<div class="right_col" role="main" layout:fragment="content">
+		<div class="">
+			<div class="page-title">
+				<div class="title_left">
+					<h3>Edition des clients</h3>
+				</div>
+			</div>
+			<div class="clearfix"></div>
+			<div class="row">
+				<div class="col-md-12 col-sm-12 col-xs-12">
+					<div class="x_panel">
+						<div class="x_title">
+							<h2>Modification de la table du client
+								[[${client.nomClient}]]</h2>
+							<div class="clearfix"></div>
+						</div>
+						<div class="row">
+							<form th:action="@{/admin/saveMClient}" method="post"
+								class="form-horizontal form-label-left input_mask">
+								<div
+									class=" col-md-12 col-sm-12 col-xs-12 form-group has-feedback">
+									<input class="form-control has-feedback-left"
+										id="inputSuccess2" placeholder="idClient" name=idClient
+										th:value="${client.idClient}" type="hidden" /> <span
+										class="red" th:errors="${client.idClient}"></span>
+								</div>
+								<div
+									class=" col-md-12 col-sm-12 col-xs-12 form-group has-feedback">
+									<input type="text" class="form-control has-feedback-left"
+										id="inputSuccess5" placeholder="Nom du client"
+										name=nomClient th:value="${client.nomClient}" /> <span
+										class="red" th:errors="${client.nomClient}"></span>
+								</div>
+
+								<div
+									class="col-md-12 col-sm-12 col-xs-12 form-group has-feedback">
+									<input type="text" class="form-control has-feedback-left"
+										id="inputSuccess3" placeholder="adresse" name=adresse
+										th:value="${client.adresse}" /> <span class="red"
+										aria-hidden="true" th:errors="${client.adresse}">
+									</span>
+								</div>
+
+								<div
+									class="  col-md-12 col-sm-12 col-xs-12 form-group has-feedback">
+									<input type="text" class="form-control has-feedback-left"
+										id="inputSuccess4" placeholder="email" name=email
+										th:value="${client.email}" /> <span class="red"
+										th:errors="${client.email}"></span>
+								</div>
+								<div
+									class="  col-md-12 col-sm-12 col-xs-12 form-group has-feedback">
+									<input type="text" class="form-control has-feedback-left"
+										id="inputSuccess4" placeholder="Téléphone" name=tel
+										th:value="${client.tel}" /> <span class="red"
+										th:errors="${client.tel}"></span>
+								</div>
+
+								<div class="ln_solid"></div>
+								<div class="form-group">
+									<div class="col-md-9 col-sm-9 col-xs-12 col-md-offset-3">
+										<a type="button" class="btn btn-primary"
+											th:href="@{/admin/clientManager}">Cancel</a>
+										<button type="submit" class="btn btn-success">
+											<i class="fa fa-pencil"></i> Modifier
+										</button>
+									</div>
+								</div>
+							</form>
+
+
+						</div>
+
+
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+</body>
+
+</html>
