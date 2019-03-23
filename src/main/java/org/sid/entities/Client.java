@@ -25,26 +25,20 @@ public class Client implements Serializable{
 	private String nomClient;
 	private String adresse;
 	private String email;
-	
 	private String tel; 
 
 	@OneToMany(mappedBy="client")
-	//Un client peut passer plusieurs commandes ==> une collection de commandes
 	private Collection<Commande> commandes;
-	
-	// ajout
 	@OneToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
 	@JoinColumn(name = "userId")
 	private User users;
-	
-	
 	
 	// Constructors
 	public Client() {
 		super();
 		
 	}
-
+	
 	 public Client(String nomClient, String adresse, String email, String tel) {
 		super();
 		this.nomClient = nomClient;
@@ -55,8 +49,7 @@ public class Client implements Serializable{
 	}
 
 	// getters and setters
-	
-
+	 
     public Long getIdClient() {
 		return idClient;
 	}
@@ -66,61 +59,44 @@ public class Client implements Serializable{
 		this.idClient = idClient;
 	}
 
-
-	
-	
 	public String getNomClient() {
 		return nomClient;
 	}
-
-
+	
 	public void setNomClient(String nomClient) {
 		this.nomClient = nomClient;
 	}
-
-
+	
 	public String getAdresse() {
 		return adresse;
 	}
-
 
 	public void setAdresse(String adresse) {
 		this.adresse = adresse;
 	}
 
-
 	public String getEmail() {
 		return email;
 	}
-
 
 	public void setEmail(String email) {
 		this.email = email;
 	}
 
-
 	public String getTel() {
 		return tel;
 	}
-
 
 	public void setTel(String tel) {
 		this.tel = tel;
 	}
 
-
 	public Collection<Commande> getCommandes() {
 		return commandes;
 	}
 
-
 	public void setCommandes(Collection<Commande> commandes) {
 		this.commandes = commandes;
 	} 
-	
- 
-	
-	
-	
 	
 }

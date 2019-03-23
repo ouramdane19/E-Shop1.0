@@ -14,8 +14,6 @@ import javax.persistence.ManyToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
-
-
 @Entity
 @Table(name = "users")  // ajout 
 public class User {
@@ -90,14 +88,6 @@ public class User {
 	public void setRoles(Collection<Role> roles) {
 		this.roles = roles;
 	}
-
-	
-
-
-
-
-
-
 }
 
 

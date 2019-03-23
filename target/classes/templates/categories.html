@@ -9,7 +9,7 @@
 
 <body>
 	<div class="right_col" role="main" data-layout-fragment="content">
-	
+
 		<div class="">
 			<div class="page-title">
 
@@ -57,7 +57,7 @@
 								<tr  class="even pointer" th:each="cat:${listeCategories}">
 								<td class="a-center "><input type="checkbox" class="flat"
 										name="table_records"></td>
-								
+
 									<td class=" " th:text="${cat.idCategorie}"></td>
 									<td  class=" " th:text="${cat.nomCategorie }"></td>
 
@@ -71,13 +71,13 @@
 										th:href="@{/admin/deleteCat(id=${cat.idCategorie},motCle=${motCle},page=${pageCourante},size=${size})}"><i class="fa fa-trash btn btn-danger"></i></a>
 									</td>
 								</tr>
-								
+
 							</tbody>
 
 
 							</tbody>
 						</table>
-						
+
 						<!-- pagination  -->
 
 		<nav aria-label="Page navigation example">
@@ -90,25 +90,11 @@
 
 			</ul>
 		</nav>
-
 		<!-- /pagination  -->
-						
-						
 					</div>
-
-
 				</div>
 			</div>
-
-
-
-
 		</div>
-
-		
-
 	</div>
-
 </body>
-
 </html>

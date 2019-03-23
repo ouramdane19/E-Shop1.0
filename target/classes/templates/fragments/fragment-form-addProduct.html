@@ -7,25 +7,22 @@
 		<div class="col-md-6 col-xs-12">
 			<div class="x_panel">
 				<div class="x_title">
-					<h2>
-						Ajouter un produit <small>à la base de données </small>
-					</h2>
-					<ul class="nav navbar-right panel_toolbox">
-						<li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
-						</li>
-						<li class="dropdown"><a href="#" class="dropdown-toggle"
-							data-toggle="dropdown" role="button" aria-expanded="true"><i
-								class="fa fa-wrench"></i></a>
-					</ul>
+					<h2>Ajouter un produit <small>à la base de données </small></h2>
+						<ul class="nav navbar-right panel_toolbox">
+							<li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+							</li>
+							<li class="dropdown"><a href="#" class="dropdown-toggle"
+								data-toggle="dropdown" role="button" aria-expanded="true"><i
+									class="fa fa-wrench"></i></a>
+						</ul>
 					<div class="clearfix"></div>
 				</div>
 				<div class="x_content">
 					<br />
-
 					<form th:action="@{/admin/save}" method="post"
 						class="form-horizontal form-label-left input_mask">
 
-					<div
+					    <div
 							class=" col-md-12 col-sm-12 col-xs-12 form-group has-feedback">
 							<input type="text" class="form-control has-feedback-left"
 								id="inputSuccess6" placeholder="Designation" name=designation />
@@ -52,15 +49,11 @@
 								id="inputSuccess9" placeholder="categorie.idCategorie" name=categorie.idCategorie />
 						</div>
 						<!-- choose categories -->
-						<p>Veuillez sélectionner une catégorie :</p>
-						
+						<p>Veuillez sélectionner une catégorie :</p>					
 						<div th:each="cat:${listeCategories}">
 							<input type="radio" th:id="${cat.nomCategorie}"  th:value="${cat.IdCategorie}"  th:field ="*{categorie.idCategorie}">
 							<label th:for="${cat.nomCategorie}" >[[${cat.nomCategorie }]] | [[${cat.idCategorie} ]]</label>
-						</div> 
-						
-
-					
+						</div> 					
 						<!-- choose category with selectors -->
 						
 					 <!--   <select th:field="*{categorie.idCategorie}">
@@ -68,14 +61,11 @@
 						          th:value="${cat.idCategorie}" 
 						          th:text="${cat.nomCategorie}">Categorie</option>
 						</select>  -->
-						<!-- choose category with selectors -->
-							
+						<!-- choose category with selectors -->						
 						<div>
-
 							<input type="file" name=photo /> <span class="red"
 								aria-hidden="true" th:errors="${produit.photo}"></span>
 						</div>
-
 						<div class="ln_solid"></div>
 						<div class="form-group">
 							<div class="col-md-9 col-sm-9 col-xs-12 col-md-offset-3">
@@ -86,8 +76,6 @@
 								</button>
 							</div>
 						</div>
-
-
 					</form>
 				</div>
 			</div>

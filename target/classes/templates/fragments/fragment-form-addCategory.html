@@ -4,7 +4,7 @@
 	xmlns:th="http://www.thymeleaf.org">
 	<!-- page content -->
 
-	<div class="row">
+<div class="row">
 		<div class="col-md-6 col-xs-12">
 			<div class="x_panel">
 				<div class="x_title">
@@ -22,14 +22,13 @@
 				</div>
 				<div class="x_content">
 					<br />
-
 					<form method="post" th:action="@{/admin/saveCat}"
 						class="form-horizontal form-label-left input_mask">
 
 						<div class="col-md-12 col-sm-12 col-xs-12 form-group has-feedback">
 							<input type="text" class="form-control has-feedback-left"
 								id="inputSuccess3" placeholder="Désignation" name=nomCategorie />
-								
+
 						</div>
 						<div class="col-md-12 col-sm-12 col-xs-12 form-group has-feedback">
 							<input type="text" class="form-control has-feedback-left"
@@ -41,23 +40,20 @@
 						</div>
 						<div class="ln_solid"></div>
 						<input type="file" id="inputSuccess4" name=photo></span>
-
+						
 						<div class="ln_solid"></div>
 						<div class="form-group">
 							<div class="col-md-9 col-sm-12 col-xs-12 col-md-offset-3">
 								<a type="button" class=" btn btn-dark collapse-link">Cancel</a>
 								<button class="btn btn-danger" type="reset">Reset</button>
-								<button type="submit" class="btn btn-success"><i
-								class="fa fa-floppy-o"></i> Ajouter</button>
+								<button type="submit" class="btn btn-success">
+									<i class="fa fa-floppy-o"></i> Ajouter
+								</button>
 							</div>
 						</div>
-
-
 					</form>
-
 				</div>
 			</div>
-
 		</div>
 	</div>
 </div>
