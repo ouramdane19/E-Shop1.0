@@ -18,7 +18,7 @@ HEIGHT=600 alt="Schedule">
   * [MySQL]()
   * [Apache Tomcat]()
   * [maeven](https://maven.apache.org/index.html)
-  * [template gentelella] (https://github.com/ColorlibHQ/gentelella)
+  * [template gentelella](https://github.com/ColorlibHQ/gentelella)
 
 ## Install
 
