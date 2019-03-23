@@ -1,5 +1,4 @@
 package org.sid.entities;
-
 import java.io.Serializable;
 import java.util.*;
 
@@ -17,14 +16,13 @@ import javax.validation.constraints.Size;
 import org.hibernate.annotations.CascadeType;
 import org.springframework.lang.NonNull;
 
-
 @Entity
 @Transactional
 public class Categorie implements Serializable {
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	private Long idCategorie;
-	
+
 	@NonNull
 	@Size(min=4,max=80)
 	private String nomCategorie;
@@ -34,12 +32,12 @@ public class Categorie implements Serializable {
 	private byte[] photo;
 	@OneToMany ( mappedBy="categorie" )
 	private Collection<Produit> produits = new ArrayList<Produit>();
-	
+
 	// constructors 
 	public Categorie() {
 		super();
 	}
-	
+
 	// getters & setters 
 
 	public Categorie( String nomCategorie, String description, String nomPhoto,
@@ -88,6 +86,5 @@ public class Categorie implements Serializable {
 	public void setProduits(Collection<Produit> produits) {
 		this.produits = produits;
 	}
-	
 
 }

@@ -53,10 +53,6 @@ public class CatMvc2Application {
 		ligneCommandeRepository.findAll().forEach(lc->System.out.println(lc.getQuantite()));
 		System.out.println("**********nom client********");
 		clientRepository.findAll().forEach(cl-> System.out.println(cl.getNomClient()));
-		
-		
-		
-		
-		
+				
 	}
 }

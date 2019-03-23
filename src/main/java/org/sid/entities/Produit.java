@@ -73,8 +73,6 @@ public class Produit implements Serializable {
 	
 	}
 
-	
-
 	public Produit(String designation,  double prix,
 			 int quantite, byte[] photo) {
 		super();
@@ -129,8 +127,5 @@ public class Produit implements Serializable {
 	public void setQuantite(int quantite) {
 		this.quantite = quantite;
 	}
-	
-	
-	
-
+		
 }

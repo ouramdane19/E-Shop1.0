@@ -27,12 +27,10 @@ public class Commande implements Serializable{
 	@JoinColumn(name="idCommande")
 	private Collection<LigneCommande> ligneCommandes;
 	
-	
 	public Commande() {
 		super();
 	
 	}
-
 
 	public Commande(Date dateCommande, Client client, Collection<LigneCommande> ligneCommandes) {
 		super();
@@ -41,49 +39,36 @@ public class Commande implements Serializable{
 		this.ligneCommandes = ligneCommandes;
 	}
 
-
 	public Long getIdCommande() {
 		return idCommande;
 	}
-
 
 	public void setIdCommande(Long idCommande) {
 		this.idCommande = idCommande;
 	}
 
-
 	public Date getDateCommande() {
 		return dateCommande;
 	}
-
 
 	public void setDateCommande(Date dateCommande) {
 		this.dateCommande = dateCommande;
 	}
 
-
 	public Client getClient() {
 		return client;
 	}
-
 
 	public void setClient(Client client) {
 		this.client = client;
 	}
 
-
 	public Collection<LigneCommande> getLigneCommandes() {
 		return ligneCommandes;
 	}
 
-
 	public void setLigneCommandes(Collection<LigneCommande> ligneCommandes) {
 		this.ligneCommandes = ligneCommandes;
 	}
-	
-	
-	
-
-	
 	
 }
