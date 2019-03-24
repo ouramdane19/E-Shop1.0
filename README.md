@@ -30,7 +30,7 @@ HEIGHT=600 alt="Schedule">
   $ git clone https://github.com/ouramdane19/E-Shop1.0.git
   -----
   # change directory to our repo
-  cd ionicApplication
+  cd E-Shop1.0
   # create the database eshop2
   mysql -u root 
   CREATE  DATABASE eshop ;
