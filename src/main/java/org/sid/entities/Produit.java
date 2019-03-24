@@ -82,7 +82,14 @@ public class Produit implements Serializable {
 		this.photo = photo;
 	}
 
-
+	public Produit(String designation,  double prix,
+			 int quantite) {
+		super();
+		this.designation = designation;
+		this.prix = prix;
+		this.quantite = quantite;
+	
+	}
 
 	public byte[] getPhoto() {
 		return photo;
