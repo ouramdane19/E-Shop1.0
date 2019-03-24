@@ -36,8 +36,8 @@ HEIGHT=600 alt="Schedule">
   
 ## Admin Credentials
 
-Login: admin
-password : 1234
+* Login: admin
+* password : 1234
 The password can be changed after deployment to server or installation.
 
 ## License
