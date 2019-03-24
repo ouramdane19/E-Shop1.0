@@ -22,7 +22,6 @@ HEIGHT=600 alt="Schedule">
 
 ## Install
 
-
   ** You muste change the file [application.properties](). Put your own DataBase, your login and password.
   You can also change the server port and the other options.
    
@@ -35,6 +34,11 @@ HEIGHT=600 alt="Schedule">
   ```
   go to [http://localhost:8083](http://localhost:8083) in your browser
   
+## Admin Credentials
+
+Login: admin
+password : 1234
+The password can be changed after deployment to server or installation.
 
 ## License
 
