@@ -23,7 +23,7 @@ public class Produit implements Serializable {
 	@NonNull
 	@Size(min=4,max=80)
 	private String designation;
-	@DecimalMin(value="10")
+	@DecimalMin(value="1")
 	private double prix;
 	@DecimalMin(value="1")
 	private int quantite ;

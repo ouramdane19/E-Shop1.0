@@ -1,5 +1,7 @@
 package org.sid.seeders;
 
+import java.util.Locale;
+
 import org.sid.dao.CategorieRepository;
 import org.sid.dao.ProduitRepository;
 import org.sid.entities.Produit;
@@ -8,12 +10,17 @@ import org.springframework.context.event.ContextRefreshedEvent;
 import org.springframework.context.event.EventListener;
 import org.springframework.stereotype.Component;
 
+import com.github.javafaker.Faker;
+
+
 @Component
 public class DataBaseSeeder {
 	
 	private CategorieRepository categorieRepository;
 	private ProduitRepository produitRepository;
-
+	Faker faker = new Faker(new Locale("fr"));
+	
+	String streetAddress = faker.address().streetAddress(); // 60018 Sawayn Brooks Suite 449
     @Autowired
     public void  DatabaseSeeder(CategorieRepository categorieRepository, ProduitRepository produitRepository) 
     	{
@@ -53,12 +60,10 @@ public void seed(ContextRefreshedEvent event) {
 private void seedProductTable() {
 	// ajout de produits 
     for (int i = 0; i < 50; i++) {
-		produitRepository.save(new Produit("HP pc portable",150,25));
-		produitRepository.save(new Produit("Intel pc",100,25));
-		produitRepository.save(new Produit("Toshiba pc",15000,10));
-		produitRepository.save(new Produit("LG pc portable",1520,10));
-		 
-		
+    	String ProductName = faker.book().title();
+    	double ProductPrice = faker.number().numberBetween(1, 22);
+    	Integer ProductQuantity = faker.number().numberBetween(1, 100);
+		produitRepository.save(new Produit(ProductName,ProductPrice,ProductQuantity));	
 	}
     System.out.println("**********Product table seeded********");
 }
