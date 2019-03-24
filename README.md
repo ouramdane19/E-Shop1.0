@@ -18,23 +18,21 @@ HEIGHT=600 alt="Schedule">
   * [MySQL]()
   * [Apache Tomcat]()
   * [maeven](https://maven.apache.org/index.html)
-
+  * [template gentelella](https://github.com/ColorlibHQ/gentelella)
 
 ## Install
+
+
   ** You muste change the file [application.properties](). Put your own DataBase, your login and password.
   You can also change the server port and the other options.
    
   ```bash
   # Clone the repo
   $ git clone https://github.com/ouramdane19/E-Shop1.0.git
-  -----
-  # change directory to our repo
-  cd ionicApplication
   # create the database eshop2
-    mysql -u root 
-    CREATE  DATABASE eshop ;
+  mysql -u root 
+  CREATE  DATABASE eshop2 ;
   ```
-  
   go to [http://localhost:8083](http://localhost:8083) in your browser
   
 
