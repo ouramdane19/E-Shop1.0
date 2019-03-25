@@ -51,10 +51,16 @@
 								<div class=" card card-body">
 									<form th:action="@{/admin/save}" method="post">
 										<div class="form-group">
-											<label class="control-label">Désignation</label> <input
+											<label class="control-label">Dï¿½signation</label> <input
 												class="form-control" type="text" name=designation
 												th:value="${produit.designation}" /> <span class="red"
 												th:errors="${produit.designation}"></span>
+										</div>
+										<div class="form-group">
+											<label class="control-label">Description</label> <input
+												class="form-control" type="text" name=designation
+												th:value="${produit.productDescription}" /> <span class="red"
+												th:errors="${produit.productDescription}"></span>
 										</div>
 										<div class="form-group">
 											<label class="control-label">Prix</label> <input
@@ -63,7 +69,7 @@
 												th:errors="${produit.prix}"></span>
 										</div>
 										<div class="form-group">
-											<label class="control-label">Quantité</label> <input
+											<label class="control-label">Quantitï¿½</label> <input
 												class="form-control" type="text" name=quantite
 												th:value="${produit.quantite}" /> <span class="red"
 												th:errors="${produit.quantite}"></span>

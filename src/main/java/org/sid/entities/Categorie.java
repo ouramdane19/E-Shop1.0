@@ -50,6 +50,20 @@ public class Categorie implements Serializable {
 		this.produits = produits;
 	}
 
+	public Categorie( String nomCategorie, String description, Collection<Produit> produits) {
+		super();
+		this.nomCategorie = nomCategorie;
+		this.description = description;
+		this.produits = produits;
+	}
+	
+	public Categorie( String nomCategorie, String description) {
+		super();
+		this.nomCategorie = nomCategorie;
+		this.description = description;
+		
+	}
+	
 	public String getNomCategorie() {
 		return nomCategorie;
 	}

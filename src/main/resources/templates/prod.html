@@ -66,12 +66,12 @@
 									<td class=" " th:text="${p.prix}"><i
 										class="success fa fa-long-arrow-up"></i></td>
 									<td class="" th:text="${p.quantite}"></td>
-									<td class="last" th:text="${p.photo}"></td>
+									<td class="last"><img th:src = "${p.photo}" /></td>
 									
 									<td><a th:href="@{/admin/edit(id=${p.id})}"><span
 											class="fa fa-pencil btn btn-primary "></span></a></td>
 									<td><a
-										onclick="return confirm('Êtes vous sûr de vouloir le supprimer!')"
+										onclick="return confirm('Ãªtes vous sÃ»r de vouloir le supprimer!')"
 										th:href="@{/admin/delete(id=${p.id},motCle=${motCle},page=${pageCourante},size=${size})}"><span
 											class="fa fa-trash btn btn-danger "></span></a></td>
 								

@@ -27,61 +27,40 @@ public class Produit implements Serializable {
 	private double prix;
 	@DecimalMin(value="1")
 	private int quantite ;
-	@Lob
-	private byte[] photo;
-	private String nomPhoto;
+	private String photo;
 	private boolean selected;
+	private String productDescription;
 	@ManyToOne 
-	@JoinColumn(name="idCategorie")  // Foreign key ou clé etrangère
-	
+	@JoinColumn(name="idCategorie")  // Foreign key
 	private Categorie categorie;
-	
-	public Categorie getCategorie() {
-		return categorie;
-	}
-
-	public void setCategorie(Categorie categorie) {
-		this.categorie = categorie;
-	}
-
-	public String getNomPhoto() {
-		return nomPhoto;
-	}
-
-
-
-	public void setNomPhoto(String nomPhoto) {
-		this.nomPhoto = nomPhoto;
-	}
-
-
-
-	public boolean isSelected() {
-		return selected;
-	}
-
-
-
-	public void setSelected(boolean selected) {
-		this.selected = selected;
-	}
-
-
+   
+	// constructors 
 
 	public Produit() {
 		super();
 	
 	}
 
-	public Produit(String designation,  double prix,
-			 int quantite, byte[] photo) {
+	public Produit(String designation,String productDescription,double prix,
+			 int quantite, String photo) {
 		super();
 		this.designation = designation;
 		this.prix = prix;
 		this.quantite = quantite;
 		this.photo = photo;
+		this.productDescription = productDescription;
 	}
 
+	public Produit(String designation,String productDescription,double prix,
+			 int quantite, String photo, Categorie categorie) {
+		super();
+		this.designation = designation;
+		this.prix = prix;
+		this.quantite = quantite;
+		this.photo = photo;
+		this.productDescription = productDescription;
+		this.categorie = categorie;
+	}
 	public Produit(String designation,  double prix,
 			 int quantite) {
 		super();
@@ -90,14 +69,41 @@ public class Produit implements Serializable {
 		this.quantite = quantite;
 	
 	}
+	
+	// getters and setters
 
-	public byte[] getPhoto() {
+	public Categorie getCategorie() {
+		return categorie;
+	}
+
+	public void setCategorie(Categorie categorie) {
+		this.categorie = categorie;
+	}
+
+	public boolean isSelected() {
+		return selected;
+	}
+
+
+	public void setSelected(boolean selected) {
+		this.selected = selected;
+	}
+	
+	public String getProductDescription() {
+		return productDescription;
+	}
+
+	public void setProductDescription(String productDescription) {
+		this.productDescription = productDescription;
+	}
+	
+	public String getPhoto() {
 		return photo;
 	}
 
 
 
-	public void setPhoto(byte[] photo) {
+	public void setPhoto(String photo) {
 		this.photo = photo;
 	}
 
