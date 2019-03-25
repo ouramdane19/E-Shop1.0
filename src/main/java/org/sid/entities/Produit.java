@@ -23,19 +23,55 @@ public class Produit implements Serializable {
 	@NonNull
 	@Size(min=4,max=80)
 	private String designation;
-	@DecimalMin(value="10")
+	@DecimalMin(value="1")
 	private double prix;
 	@DecimalMin(value="1")
 	private int quantite ;
-	@Lob
-	private byte[] photo;
-	private String nomPhoto;
+	private String photo;
 	private boolean selected;
+	private String productDescription;
 	@ManyToOne 
-	@JoinColumn(name="idCategorie")  // Foreign key ou clé etrangère
-	
+	@JoinColumn(name="idCategorie")  // Foreign key
 	private Categorie categorie;
+   
+	// constructors 
+
+	public Produit() {
+		super();
 	
+	}
+
+	public Produit(String designation,String productDescription,double prix,
+			 int quantite, String photo) {
+		super();
+		this.designation = designation;
+		this.prix = prix;
+		this.quantite = quantite;
+		this.photo = photo;
+		this.productDescription = productDescription;
+	}
+
+	public Produit(String designation,String productDescription,double prix,
+			 int quantite, String photo, Categorie categorie) {
+		super();
+		this.designation = designation;
+		this.prix = prix;
+		this.quantite = quantite;
+		this.photo = photo;
+		this.productDescription = productDescription;
+		this.categorie = categorie;
+	}
+	public Produit(String designation,  double prix,
+			 int quantite) {
+		super();
+		this.designation = designation;
+		this.prix = prix;
+		this.quantite = quantite;
+	
+	}
+	
+	// getters and setters
+
 	public Categorie getCategorie() {
 		return categorie;
 	}
@@ -44,53 +80,30 @@ public class Produit implements Serializable {
 		this.categorie = categorie;
 	}
 
-	public String getNomPhoto() {
-		return nomPhoto;
-	}
-
-
-
-	public void setNomPhoto(String nomPhoto) {
-		this.nomPhoto = nomPhoto;
-	}
-
-
-
 	public boolean isSelected() {
 		return selected;
 	}
 
 
-
 	public void setSelected(boolean selected) {
 		this.selected = selected;
 	}
-
-
-
-	public Produit() {
-		super();
 	
+	public String getProductDescription() {
+		return productDescription;
 	}
 
-	public Produit(String designation,  double prix,
-			 int quantite, byte[] photo) {
-		super();
-		this.designation = designation;
-		this.prix = prix;
-		this.quantite = quantite;
-		this.photo = photo;
+	public void setProductDescription(String productDescription) {
+		this.productDescription = productDescription;
 	}
-
-
-
-	public byte[] getPhoto() {
+	
+	public String getPhoto() {
 		return photo;
 	}
 
 
 
-	public void setPhoto(byte[] photo) {
+	public void setPhoto(String photo) {
 		this.photo = photo;
 	}
 
