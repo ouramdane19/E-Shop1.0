@@ -17,15 +17,16 @@ import org.springframework.stereotype.Component;
 import com.cloudinary.Cloudinary;
 import com.cloudinary.utils.ObjectUtils;
 import com.github.javafaker.Faker;
-
-
+import io.github.cdimascio.dotenv.Dotenv;
 
 
 @Component
 public class DataBaseSeeder {
 	private CategorieRepository categorieRepository;
 	private ProduitRepository produitRepository;
-	Cloudinary cloudinary = new Cloudinary("cloudinary://127997472188269:XKQYBduBIma62gy8nKtykDZWZAE@deesjjv4h");
+	Dotenv dotenv = Dotenv.load();
+
+	Cloudinary cloudinary = new Cloudinary(dotenv.get("CLOUDINARY_VAR"));
 	Faker faker = new Faker(new Locale("fr"));
 
     @Autowired
@@ -37,10 +38,11 @@ public class DataBaseSeeder {
     
 	@EventListener
 	public void seed(ContextRefreshedEvent event) {
+		//produitRepository.deleteAll();
+		//categorieRepository.deleteAll();
 	    //seedCategoryTable();
 		//idsCategories();
-		//seedProductTable();
-		
+		//seedProductTable();	
 	}
 	
 	
@@ -59,7 +61,7 @@ public class DataBaseSeeder {
 	// ******************SEED CATEGORIES**************//
 	private void seedCategoryTable() {
 		// Destroy all categories
-		categorieRepository.deleteAll();
+		//categorieRepository.deleteAll();
 		// add categories
 	    for (int i = 0; i < 10; i++) {
 	    	String categorieName = faker.book().genre();
@@ -74,10 +76,9 @@ public class DataBaseSeeder {
 	
 
 	//************* SEED PRODUCTS ****************//
-	
 	private void seedProductTable() {
 		// Destroy all products
-		produitRepository.deleteAll();
+		//produitRepository.deleteAll();
 		// Add Products 
 	    for (int i = 0; i < 10; i++) {
 	        // generate fake products
@@ -92,7 +93,6 @@ public class DataBaseSeeder {
 			    // upoload pictures to cloudinary	
 			    	try {
 			    		cloudinary.uploader().upload(picture, ObjectUtils.emptyMap());
-						System.out.println(cloudinary.uploader().upload(picture, ObjectUtils.emptyMap()).get("secure_url"));
 						String picture_url = (String) cloudinary.uploader().upload(picture, ObjectUtils.emptyMap()).get("secure_url");
 						produitRepository.save(new Produit(ProductName,ProductDescription, ProductPrice,ProductQuantity,picture_url,cat));
 					} catch (IOException e) {

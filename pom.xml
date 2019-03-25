@@ -126,6 +126,12 @@
 	    	<artifactId>cloudinary-http44</artifactId>
 	    	<version>1.22.1</version>
 	    </dependency>
+	    <!-- https://mvnrepository.com/artifact/io.github.cdimascio/java-dotenv -->
+		<dependency>
+			<groupId>io.github.cdimascio</groupId>
+			<artifactId>java-dotenv</artifactId>
+			<version>5.0.0</version>
+		</dependency>
 	    
 		<dependency>
 			<groupId>org.springframework.boot</groupId>

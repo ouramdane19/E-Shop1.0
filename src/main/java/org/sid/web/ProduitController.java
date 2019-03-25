@@ -26,7 +26,6 @@ import com.cloudinary.Cloudinary;
 @Controller
 
 public class ProduitController {
-	Cloudinary cloudinary = new Cloudinary("cloudinary://127997472188269:XKQYBduBIma62gy8nKtykDZWZAE@deesjjv4h");
 	public double total=0;
 	@Autowired
 	private ProduitRepository produitRepository;

@@ -1,0 +1,8 @@
+
+log/*.log
+!log/.keep
+.DS_Store
+public/assets
+public/packs
+public/packs-test
+.env*
