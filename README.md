@@ -22,7 +22,7 @@ HEIGHT=600 alt="Schedule">
 
 ## Install
 
-  ** You muste change the file [application.properties](). Put your own DataBase, your login and password.
+  ** You must change the file [application.properties](). Put your own DataBase, your login and password.
   You can also change the server port and the other options.
    
   ```bash
