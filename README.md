@@ -14,10 +14,10 @@ HEIGHT=600 alt="Schedule">
   * [spring boot](https://spring.io/projects/spring-boot)
   * [spring Data JPA](https://spring.io/projects/spring-data-jpa)
   * [JPA/Hibernate]()
-  * [Tymleaf](https://www.thymeleaf.org/)
+  * [Thymleaf](https://www.thymeleaf.org/)
   * [MySQL]()
   * [Apache Tomcat]()
-  * [maeven](https://maven.apache.org/index.html)
+  * [maven](https://maven.apache.org/index.html)
   * [template gentelella](https://github.com/ColorlibHQ/gentelella)
 
 ## Install
