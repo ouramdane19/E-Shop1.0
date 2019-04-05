@@ -127,6 +127,12 @@
 	    	<version>1.22.1</version>
 	    </dependency>
 	    <!-- https://mvnrepository.com/artifact/io.github.cdimascio/java-dotenv -->
+	    <!-- https://mvnrepository.com/artifact/com.cloudinary/cloudinary-taglib -->
+		<dependency>
+    		<groupId>com.cloudinary</groupId>
+    		<artifactId>cloudinary-taglib</artifactId>
+    		<version>1.22.1</version>
+		</dependency>
 		<dependency>
 			<groupId>io.github.cdimascio</groupId>
 			<artifactId>java-dotenv</artifactId>
