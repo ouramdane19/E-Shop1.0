@@ -18,10 +18,10 @@
 				<h2> Liste de produits dans le panier</h2>
 				
 				<div class="container" style =" margin-bottom: 15px">
-				<a  href="/home" class="btn btn-default pull-left"
+			<!-- 	<a  href="/home" class="btn btn-default pull-left"
 						style="margin-top: 15px; margin-left: 20px"> <span
 						class="glyphicon glyphicon-shipping-cart"> </span>Home
-					</a>
+					</a> -->
 				
 					<a href="/home" class="btn btn-success pull-left"
 						style="margin-top: 15px; margin-left: 20px"> <span
@@ -47,10 +47,10 @@
 							<td th:text ="${l.quantite}"></td>
 							<td th:text ="${l.produit.prix}"></td>
 							<td  th:text ="${l.prix}"></td>
-							<td><a onclick="return confirm('Êtes vous sûr de vouloir le supprimer!')" th:href="@{/deleteLC(id=${l.idLigneCommande})}"  class="btn btn-danger">remove</a></td>
+							<td><a onclick="return confirm('ï¿½tes vous sï¿½r de vouloir le supprimer!')" th:href="@{/deleteLC(id=${l.idLigneCommande})}"  class="btn btn-danger">remove</a></td>
 					</tbody>
 				</table>
-				<p > Le total est de : [[${total}]]<p>
+				<p > Le total est de : [[${total}]] euros<p>
 				<a href="/commande" class="btn btn-dark pull-left"
 						style="margin-top: 15px; margin-left: 20px"> <span
 						class="glyphicon glyphicon-shipping-cart"> </span>Commander
@@ -59,7 +59,7 @@
 			
 		
 		</div>
-	</div> -->
+	</div> 
 		
 
 	</div>

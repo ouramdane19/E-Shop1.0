@@ -20,12 +20,12 @@
 				<div class="x_content">
 					<br />
 					<form th:action="@{/admin/save}" method="post"
-						class="form-horizontal form-label-left input_mask">
+						class="form-horizontal form-label-left input_mask" enctype="multipart/form-data" >
 
 					    <div
 							class=" col-md-12 col-sm-12 col-xs-12 form-group has-feedback">
 							<input type="text" class="form-control has-feedback-left"
-								id="inputSuccess6" placeholder="Designation" name=designation />
+								id="inputSuccess6" placeholder="Designation" th:field="*{produit.designation}" />
 
 							<span class="red" aria-hidden="true"
 								th:errors="${produit.designation}"></span>
@@ -33,7 +33,7 @@
 						 <div
 							class=" col-md-12 col-sm-12 col-xs-12 form-group has-feedback">
 							<input type="text" class="form-control has-feedback-left"
-								id="inputSuccess6" placeholder="Description" name=productDescription />
+								id="inputSuccess6" placeholder="Description" th:field="*{produit.productDescription}" />
 
 							<span class="red" aria-hidden="true"
 								th:errors="${produit.productDescription}"></span>
@@ -41,35 +41,37 @@
 
 						<div class="col-md-12 col-sm-12 col-xs-12 form-group has-feedback">
 							<input type="text" class="form-control has-feedback-left"
-								id="inputSuccess7" placeholder="Price" name=prix /> <span
+								id="inputSuccess7" placeholder="Price" th:field="*{produit.prix}" /> <span
 								class="red" aria-hidden="true" th:errors="${produit.prix}"></span>
 						</div>
 
 						<div
 							class="  col-md-12 col-sm-12 col-xs-12 form-group has-feedback">
 							<input type="text" class="form-control has-feedback-left"
-								id="inputSuccess8" placeholder="Quantity" name=quantite /> <span
+								id="inputSuccess8" placeholder="Quantity" th:field="*{produit.quantite}" /> <span
 								class=" red" aria-hidden="true" th:errors="${produit.quantite}"></span>
 						</div>
 						<div
 							class="  col-md-12 col-sm-12 col-xs-12 form-group has-feedback">
 							<input type="text" class="form-control has-feedback-left"
-								id="inputSuccess9" placeholder="categorie.idCategorie" name=categorie.idCategorie />
+								id="inputSuccess9" placeholder="categorie.idCategorie" th:field="*{categorie.idCategorie}" />
 						</div>
+							<!-- choose category with selectors -->
+						<p>Veuillez sélectionner une catégorie :</p>
+					   <select  th:field="*{categorie.idCategorie}">
+						  <option th:each="cat:${listeCategories}"
+						          th:value="${cat.idCategorie}" 
+						          th:text="${cat.nomCategorie}">Categorie</option>
+						</select> 
+						<!-- choose category with selectors -->	
+						
 						<!-- choose categories -->
 						<p>Veuillez sélectionner une catégorie :</p>					
 						<div th:each="cat:${listeCategories}">
 							<input type="radio" th:id="${cat.nomCategorie}"  th:value="${cat.IdCategorie}"  th:field ="*{categorie.idCategorie}">
 							<label th:for="${cat.nomCategorie}" >[[${cat.nomCategorie }]] | [[${cat.idCategorie} ]]</label>
 						</div> 					
-						<!-- choose category with selectors -->
-						
-					 <!--   <select th:field="*{categorie.idCategorie}">
-						  <option th:each="cat:${listeCategories}"
-						          th:value="${cat.idCategorie}" 
-						          th:text="${cat.nomCategorie}">Categorie</option>
-						</select>  -->
-						<!-- choose category with selectors -->						
+										
 						<div>
 							<input type="file" name=photo /> <span class="red"
 								aria-hidden="true" th:errors="${produit.photo}"></span>

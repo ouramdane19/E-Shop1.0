@@ -38,11 +38,13 @@ public class DataBaseSeeder {
     
 	@EventListener
 	public void seed(ContextRefreshedEvent event) {
-		//produitRepository.deleteAll();
-		//categorieRepository.deleteAll();
-	    //seedCategoryTable();
-		//idsCategories();
-		//seedProductTable();	
+		
+//		  produitRepository.deleteAll(); 
+//		  categorieRepository.deleteAll();
+//		  seedCategoryTable(); 
+//		  idsCategories(); 
+//		  seedProductTable();
+		 
 	}
 	
 	
