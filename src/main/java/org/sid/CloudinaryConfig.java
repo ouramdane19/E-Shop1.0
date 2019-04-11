@@ -5,6 +5,8 @@ import com.cloudinary.Singleton;
 import com.cloudinary.Transformation;
 import com.cloudinary.utils.ObjectUtils;
 
+import io.github.cdimascio.dotenv.Dotenv;
+
 import org.sid.entities.Produit;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
@@ -15,11 +17,13 @@ import java.util.Map;
 @Component
 public class CloudinaryConfig {
     private Cloudinary cloudinary;
+    Dotenv dotenv = Dotenv.load();
     @Autowired
-    public CloudinaryConfig(@Value("${cloudinary.apikey}") String key,
-                            @Value("${cloudinary.apisecret}") String secret,
-                            @Value("${cloudinary.cloudname}") String cloud){
-        cloudinary = Singleton.getCloudinary();
+    public CloudinaryConfig(){
+    	String key = dotenv.get("CLOUD_API_KEY");
+    	String secret = dotenv.get("CLOUD_API_SECRET");
+    	String cloud = dotenv.get("CLOUD_NAME");
+    	cloudinary = Singleton.getCloudinary();
         cloudinary.config.cloudName=cloud;
         cloudinary.config.apiSecret=secret;
         cloudinary.config.apiKey=key;
