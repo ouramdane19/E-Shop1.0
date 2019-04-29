@@ -21,7 +21,6 @@ public class Panier implements Serializable {
 		}else {
 			lc.setQuantite(lc.getQuantite()+quantite);
 		}
-	
 	}
 	
 	// recupération des items 
@@ -48,5 +47,4 @@ public class Panier implements Serializable {
 	public void delteItem(Long idProduit) {
 		items.remove(idProduit);
 	}
-	
 }

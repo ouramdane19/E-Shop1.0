@@ -14,7 +14,11 @@ import javax.validation.constraints.DecimalMin;
 import javax.validation.constraints.Size;
 import org.springframework.lang.NonNull;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
+import lombok.Data;
+
+@Data
 @Entity
 @Transactional
 public class Produit implements Serializable {
@@ -71,74 +75,9 @@ public class Produit implements Serializable {
 	}
 	
 	// getters and setters
-
+	@JsonIgnore
 	public Categorie getCategorie() {
 		return categorie;
-	}
-
-	public void setCategorie(Categorie categorie) {
-		this.categorie = categorie;
-	}
-
-	public boolean isSelected() {
-		return selected;
-	}
-
-
-	public void setSelected(boolean selected) {
-		this.selected = selected;
-	}
-	
-	public String getProductDescription() {
-		return productDescription;
-	}
-
-	public void setProductDescription(String productDescription) {
-		this.productDescription = productDescription;
-	}
-	
-	public String getPhoto() {
-		return photo;
-	}
-
-
-
-	public void setPhoto(String photo) {
-		this.photo = photo;
-	}
-
-
-
-	public Long getId() {
-		return id;
-	}
-
-	public void setId(Long id) {
-		this.id = id;
-	}
-
-	public String getDesignation() {
-		return designation;
-	}
-
-	public void setDesignation(String designation) {
-		this.designation = designation;
-	}
-
-	public double getPrix() {
-		return prix;
-	}
-
-	public void setPrix(double prix) {
-		this.prix = prix;
-	}
-
-	public int getQuantite() {
-		return quantite;
-	}
-
-	public void setQuantite(int quantite) {
-		this.quantite = quantite;
 	}
 		
 }

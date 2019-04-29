@@ -12,9 +12,12 @@ import javax.persistence.OneToMany;
 import javax.transaction.Transactional;
 
 import javax.validation.constraints.Size;
+import javax.xml.bind.annotation.XmlRootElement;
 
 import org.hibernate.annotations.CascadeType;
 import org.springframework.lang.NonNull;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Entity
 @Transactional
@@ -94,6 +97,7 @@ public class Categorie implements Serializable {
 	public void setPhoto(byte[] photo) {
 		this.photo = photo;
 	}
+	@JsonIgnore
 	public Collection<Produit> getProduits() {
 		return produits;
 	}
