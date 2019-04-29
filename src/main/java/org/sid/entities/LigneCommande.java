@@ -10,6 +10,9 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.transaction.Transactional;
 
+import lombok.Data;
+
+@Data
 @Entity
 @Transactional
 public class LigneCommande implements Serializable {
@@ -34,32 +37,4 @@ public class LigneCommande implements Serializable {
 		this.quantite = quantite;
 		this.produit = produit;
 	}
-	public Long getIdLigneCommande() {
-		return idLigneCommande;
-	}
-	public void setIdLigneCommande(Long idLigneCommande) {
-		this.idLigneCommande = idLigneCommande;
-	}
-	public double getPrix() {
-		return prix;
-	}
-	public void setPrix(double prix) {
-		this.prix = prix;
-	}
-	public double getQuantite() {
-		return quantite;
-	}
-	public void setQuantite(double quantite) {
-		this.quantite = quantite;
-	}
-	public Produit getProduit() {
-		return produit;
-	}
-	public void setProduit(Produit produit) {
-		this.produit = produit;
-	}
-	
-	
-	
-
 }
