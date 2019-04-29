@@ -22,10 +22,8 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 @Entity
 @Transactional
 public class Categorie implements Serializable {
-	@Id
-	@GeneratedValue(strategy=GenerationType.AUTO)
-	private Long idCategorie;
 
+	private @Id @GeneratedValue Long idCategorie;
 	@NonNull
 	@Size(min=4,max=80)
 	private String nomCategorie;

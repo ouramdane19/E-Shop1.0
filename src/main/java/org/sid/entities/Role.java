@@ -10,11 +10,12 @@ import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 
+import lombok.Data;
+@Data
 @Entity
 public class Role {
-	@Id
-	@GeneratedValue(strategy=GenerationType.AUTO)
-	private Long id;
+
+	private @Id @GeneratedValue(strategy=GenerationType.AUTO) Long id;
 	@ManyToMany(mappedBy = "roles")
     private Collection<User> users;
 	
@@ -27,49 +28,6 @@ public class Role {
 	
 	public Role() {
 		super();
-		// TODO Auto-generated constructor stub
+		
 	}
-
-	public Long getId() {
-		return id;
-	}
-
-	public void setId(Long id) {
-		this.id = id;
-	}
-
-	public Collection<User> getUsers() {
-		return users;
-	}
-
-	public void setUsers(Collection<User> users) {
-		this.users = users;
-	}
-
-	public Collection<Privilege> getPrivileges() {
-		return privileges;
-	}
-
-	public void setPrivileges(Collection<Privilege> privileges) {
-		this.privileges = privileges;
-	}
-
-	public Long getIdUser() {
-		return idUser;
-	}
-
-	public void setIdUser(Long idUser) {
-		this.idUser = idUser;
-	}
-
-	public String getRoleName() {
-		return RoleName;
-	}
-
-	public void setRoleName(String roleName) {
-		RoleName = roleName;
-	}
-	
-	
-	
 }

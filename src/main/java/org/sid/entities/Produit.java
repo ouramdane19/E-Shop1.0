@@ -22,8 +22,8 @@ import lombok.Data;
 @Entity
 @Transactional
 public class Produit implements Serializable {
-	@Id @GeneratedValue
-	private  Long id;
+	
+	private @Id @GeneratedValue  Long id;
 	@NonNull
 	@Size(min=4,max=80)
 	private String designation;
@@ -65,6 +65,7 @@ public class Produit implements Serializable {
 		this.productDescription = productDescription;
 		this.categorie = categorie;
 	}
+	
 	public Produit(String designation,  double prix,
 			 int quantite) {
 		super();

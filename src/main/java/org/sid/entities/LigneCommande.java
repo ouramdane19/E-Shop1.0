@@ -27,12 +27,11 @@ public class LigneCommande implements Serializable {
 
 	
 	public LigneCommande() {
-		super();
-		
+		super();	
 	}
+	
 	public LigneCommande( double prix, double quantite, Produit produit) {
 		super();
-		
 		this.prix = prix;
 		this.quantite = quantite;
 		this.produit = produit;
